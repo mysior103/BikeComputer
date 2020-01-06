@@ -104,34 +104,19 @@ static void OLED_InitReg(void) {
 
 /********************************************************************************
  function:	Set the display scan and color transfer modes
- parameter:
- Scan_dir   :   Scan direction
- Colorchose :   RGB or GBR color format
  ********************************************************************************/
-void OLED_SetGramScanWay(OLED_SCAN_DIR Scan_dir) {
-	//Get the screen scan direction
-	sOLED_DIS.OLED_Scan_Dir = Scan_dir;
-
-	//Get GRAM and OLED width and height
-	if (Scan_dir == L2R_U2D || Scan_dir == L2R_D2U || Scan_dir == R2L_U2D
-			|| Scan_dir == R2L_D2U) {
-		sOLED_DIS.OLED_Dis_Column = OLED_WIDTH;
-		sOLED_DIS.OLED_Dis_Page = OLED_HEIGHT;
-		sOLED_DIS.OLED_X_Adjust = OLED_X;
-		sOLED_DIS.OLED_Y_Adjust = OLED_Y;
-	} else {
-		sOLED_DIS.OLED_Dis_Column = OLED_HEIGHT;
-		sOLED_DIS.OLED_Dis_Page = OLED_WIDTH;
-		sOLED_DIS.OLED_X_Adjust = OLED_Y;
-		sOLED_DIS.OLED_Y_Adjust = OLED_X;
-	}
+void OLED_SetGramScanWay() {
+	sOLED_DIS.OLED_Dis_Column = OLED_WIDTH;
+	sOLED_DIS.OLED_Dis_Page = OLED_HEIGHT;
+	sOLED_DIS.OLED_X_Adjust = OLED_X;
+	sOLED_DIS.OLED_Y_Adjust = OLED_Y;
 }
 
 /********************************************************************************
  function:
  initialization
  ********************************************************************************/
-void OLED_Init(OLED_SCAN_DIR OLED_ScanDir) {
+void OLED_Init() {
 	//Hardware reset
 	OLED_Reset();
 
@@ -139,7 +124,7 @@ void OLED_Init(OLED_SCAN_DIR OLED_ScanDir) {
 	OLED_InitReg();
 
 	//Set the display scan and color transfer modes
-	OLED_SetGramScanWay(OLED_ScanDir);
+	OLED_SetGramScanWay();
 	Driver_Delay_ms(200);
 
 	//Turn on the OLED display

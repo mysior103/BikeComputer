@@ -14,21 +14,6 @@
 #include <stdlib.h>
 
 /********************************************************************************
-function:	System Init
-note:
-	Initialize the communication method
-********************************************************************************/
-uint8_t System_Init(void)
-{
-    printf("USE 4wire spi\r\n");
-    return 0;
-}
-
-void System_Exit(void)
-{
-
-}
-/********************************************************************************
 function:	Hardware interface
 	SPI4W_Write_Byte(value) : 
 		HAL library hardware SPI

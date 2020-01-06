@@ -14,9 +14,9 @@ Please use progressive scanning to generate images or fonts
 
 #include "DEV_Config.h"
 
-#define	COLOR				uint16_t		//The variable type of the color (unsigned short) 
-#define	POINT				uint16_t		//The type of coordinate (unsigned short) 
-#define	LENGTH				uint16_t		//The type of coordinate (unsigned short) 
+#define	COLOR				uint16_t		//The variable type of the color (unsigned short)
+#define	POINT				uint16_t		//The type of coordinate (unsigned short)
+#define	LENGTH				uint16_t		//The type of coordinate (unsigned short)
 
 /********************************************************************************
 function:	
@@ -32,29 +32,11 @@ function:
 
 /********************************************************************************
 function:	
-			scanning method
-********************************************************************************/
-typedef enum{
-	L2R_U2D  = 0,	//The display interface is displayed , left to right, up to down 
-	L2R_D2U  ,
-	R2L_U2D  ,
-	R2L_D2U  ,
-	
-	U2D_L2R  ,
-	U2D_R2L  ,
-	D2U_L2R  ,
-	D2U_R2L  , 
-}OLED_SCAN_DIR;
-#define SCAN_DIR_DFT  L2R_U2D  //Default scan direction = L2R_U2D
-
-/********************************************************************************
-function:	
 	Defines the total number of rows in the display area
 ********************************************************************************/
 typedef struct{
 	LENGTH OLED_Dis_Column;	//COLUMN
 	LENGTH OLED_Dis_Page;	//PAGE
-	OLED_SCAN_DIR OLED_Scan_Dir;
 	POINT OLED_X_Adjust;		//OLED x actual display position calibration
 	POINT OLED_Y_Adjust;		//OLED y actual display position calibration
 }OLED_DIS;
@@ -63,8 +45,8 @@ typedef struct{
 function:	
 			Macro definition variable name
 ********************************************************************************/
-void OLED_Init( OLED_SCAN_DIR OLED_ScanDir);
-void OLED_SetGramScanWay(OLED_SCAN_DIR Scan_dir);
+void OLED_Init();
+void OLED_SetGramScanWay();
 
 void OLED_WriteReg(uint8_t Reg);
 void OLED_WriteData(uint8_t Data);

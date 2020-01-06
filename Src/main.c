@@ -94,11 +94,8 @@ int main(void)
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
 
-  printf("**********1.5inch OLED Demo**********\r\n");
-  	System_Init();
-
   	printf("OLED_Init()...\r\n");
-  	OLED_Init(SCAN_DIR_DFT );//SCAN_DIR_DFT = D2U_L2R
+  	OLED_Init();
 
   	printf("OLED_Show()...\r\n");
   	GUI_Show();

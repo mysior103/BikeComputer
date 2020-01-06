@@ -1,5 +1,4 @@
 /******************************************************************************
-****************************Upper application layer****************************
 * | file      	:	OLED_GUI.c
 * |	version		:	V1.0
 * | date		:	2017-11-09
@@ -15,7 +14,6 @@ Achieve time display: adaptive size display time minutes and seconds
 #include <stdio.h>
 
 extern OLED_DIS sOLED_DIS;
-extern COLOR Buffer[OLED_WIDTH / 2 * OLED_HEIGHT];
 /******************************************************************************
 function:	Coordinate conversion
 ******************************************************************************/

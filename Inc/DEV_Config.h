@@ -31,10 +31,7 @@
 #define SPI1_MOSI_1		HAL_GPIO_WritePin(SPI1_MOSI_GPIO_Port, SPI1_MOSI_Pin, GPIO_PIN_SET)
 /*------------------------------------------------------------------------------------------------------*/
 
-uint8_t System_Init(void);
-void    System_Exit(void);
-
-uint8_t SPI4W_Write_Byte(uint8_t value);
+void SPI4W_Write_Byte(uint8_t value);
 
 void Driver_Delay_ms(uint32_t xms);
 void Driver_Delay_us(uint32_t xus);
